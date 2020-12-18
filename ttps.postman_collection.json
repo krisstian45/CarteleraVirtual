@@ -1,0 +1,470 @@
+{
+	"info": {
+		"_postman_id": "7a01a2ba-c751-41cc-8f11-35da03006519",
+		"name": "ttps",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9148/ttps-spring/users/log_in/",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2ce7e050-6a9f-43ca-911f-55a52e4508f8",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"usuario\":\"nino\",\n    \"contra\":123456\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9148/ttps-spring/users/log_in/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9148",
+					"path": [
+						"ttps-spring",
+						"users",
+						"log_in",
+						""
+					]
+				},
+				"description": "login con un Nombre de usuario incorrecto \nobservar que devuelve un json con el campo usuario indicando el error"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9148/ttps-spring/users/log_in/",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2ce7e050-6a9f-43ca-911f-55a52e4508f8",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"usuario\":\"docente1\",\n    \"contra\":1234566\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9148/ttps-spring/users/log_in/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9148",
+					"path": [
+						"ttps-spring",
+						"users",
+						"log_in",
+						""
+					]
+				},
+				"description": "login con usuario correcto pero contraseña incorrecta"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9148/ttps-spring/users/log_in/",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2ce7e050-6a9f-43ca-911f-55a52e4508f8",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"usuario\":\"alumno1\",\n    \"contra\":123456\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9148/ttps-spring/users/log_in/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9148",
+					"path": [
+						"ttps-spring",
+						"users",
+						"log_in",
+						""
+					]
+				},
+				"description": "ahora con un alumno lo mismo que con el docente, lo importante aca es que nos devuelve su perfil."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9148/ttps-spring/carteleras/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9148/ttps-spring/carteleras/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9148",
+					"path": [
+						"ttps-spring",
+						"carteleras",
+						""
+					]
+				},
+				"description": "el listar de cartelera con usuarios publicos, no le envia token, y simplemente me trae todas las carteleras disponibles."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9148/ttps-spring/carteleras/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "token",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9148/ttps-spring/carteleras/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9148",
+					"path": [
+						"ttps-spring",
+						"carteleras",
+						""
+					]
+				},
+				"description": "en este caso genero el listado enviando el token, que es un usuario tipo administrador.y me devuelve todo las carteleras"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9148/ttps-spring/carteleras/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "token2",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9148/ttps-spring/carteleras/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9148",
+					"path": [
+						"ttps-spring",
+						"carteleras",
+						""
+					]
+				},
+				"description": "quiero listar las carteleras como docente ,por que le envie un token valido,cuando me trae , estan ordenados por las propias del docente y luego el resto."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9148/ttps-spring/carteleras/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "token3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9148/ttps-spring/carteleras/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9148",
+					"path": [
+						"ttps-spring",
+						"carteleras",
+						""
+					]
+				},
+				"description": "como usuario, con token de usuario pido las carteleras y me las trae ordenadas con interes, osea primero las que le di me interesa y leugo el resto. todo esto con token valido como alumno"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9148/ttps-spring/carteleras/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "token5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:9148/ttps-spring/carteleras/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9148",
+					"path": [
+						"ttps-spring",
+						"carteleras",
+						""
+					]
+				},
+				"description": "igual que los anterirores pero en este caso es para los publicadores segun el token del publicador listo primero las que puede publciar y luego el resto."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9148/ttps-spring/carteleras/",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2ce7e050-6a9f-43ca-911f-55a52e4508f8",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "token2",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t \"idUsuario\":5,\n\t\"titulo\":\"titulo6\",\n\t\"subtitulo\":\"subtitulo6\",\n\t\"informarcion\":\"informacion extra \",\n\t\"docente\":2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9148/ttps-spring/carteleras/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9148",
+					"path": [
+						"ttps-spring",
+						"carteleras",
+						""
+					]
+				},
+				"description": "Al crear cartelera mandando un token que no es de un administrador produce un error.  y no deja guardar la nueva cartelera. por no ser administrador"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9148/ttps-spring/carteleras/",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2ce7e050-6a9f-43ca-911f-55a52e4508f8",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "token",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t \"idUsuario\":5,\n\t\"titulo\":\"titulo6\",\n\t\"subtitulo\":\"subtitulo6\",\n\t\"informarcion\":\"informacion extra \",\n\t\"docente\":2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9148/ttps-spring/carteleras/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9148",
+					"path": [
+						"ttps-spring",
+						"carteleras",
+						""
+					]
+				},
+				"description": "En este caso con un usuario como admin se logra crear con exito la cartelera y se guarda en la base de datos."
+			},
+			"response": []
+		}
+	]
+}
